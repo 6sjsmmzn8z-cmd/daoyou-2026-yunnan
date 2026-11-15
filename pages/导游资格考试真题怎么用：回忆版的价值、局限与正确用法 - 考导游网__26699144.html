@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>导游资格考试真题怎么用：回忆版的价值、局限与正确用法 - 考导游网</title>
+  <meta name="description" content="回忆版真题的价值在考法与结构，局限在非官方与时间差。本文给出看结构、找倾向、补薄弱的三步用法，并说明如何配合题库里带解析的回忆版真题与错题本。" />
+  <meta name="keywords" content="导游资格考试真题,导游证真题,导游资格考试真题及答案" />
+  <link rel="canonical" href="https://www.kdaoyou.com/zhenti-jiexi/daoyou-zige-kaoshi-zhenti-zenme-yong" />
+  <meta name="baidu-site-verification" content="codeva-PaH9MeJE2F" />
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?ee1a8931da26fbc00b655b3cfc37e6b8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, sans-serif;
+  background: #f4f7f6; color: #2d3436; line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+a { color: inherit; text-decoration: none; }
+.site { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* 顶栏 */
+.topbar { background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+.topbar-inner { max-width: 1100px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 8px; }
+.topbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.brand { display: flex; align-items: center; gap: 10px; cursor: pointer; flex-shrink: 0; }
+.logo { font-size: 28px; }
+.brand-name { font-size: 22px; font-weight: 800; white-space: nowrap; background: linear-gradient(135deg, #11998e, #38ef7d); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* 导航 */
+/* 尺寸与 SPA 顶栏（App.vue）保持一致，两处必须同步改，否则同一站在 / 与 /tiku 下导航错位 */
+.nav { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; min-width: 0; }
+.nav-link { color: #555; font-size: 15px; font-weight: 600; padding: 6px 8px; border-radius: 999px; transition: all 0.18s; display: inline-block; }
+.nav-link:hover { color: #11998e; background: #f0f9f7; }
+.nav-drop { position: relative; }
+.nav-sub { display: none; position: absolute; top: 100%; left: 0; background: #fff; border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.15); min-width: 140px; padding: 6px 0; z-index: 200; }
+.nav-drop:hover .nav-sub { display: block; }
+.nav-sub a { display: block; padding: 9px 18px; font-size: 14px; color: #555; white-space: nowrap; }
+.nav-sub a:hover { background: #f0f9f7; color: #11998e; }
+/* 「更多」是纯下拉触发器，不给假链接 */
+.nav-caret { display: inline-block; margin-left: 5px; font-size: 10px; color: #999; vertical-align: 1px; }
+/* 「地方动态」下拉：32 个省市按大区分组的四列面板（沿用单列 .nav-sub 会被拖成 32 行长条）。
+   display 只写在 :hover 规则里：写在基础规则会与 .nav-sub{display:none} 同特异性而靠后胜出，面板就常开了 */
+.nav-sub-prov { width: 460px; min-width: 0; padding: 10px 12px; grid-template-columns: repeat(4, 1fr); gap: 2px 4px; }
+.nav-drop:hover .nav-sub-prov { display: grid; }
+.nav-sub-prov .prov-region { grid-column: 1 / -1; margin-top: 6px; padding: 4px 10px; font-size: 12px; font-weight: 700; color: #11998e; background: #eef7f4; border-radius: 6px; }
+.nav-sub-prov .prov-region:first-child { margin-top: 0; }
+.nav-sub-prov .prov-link { padding: 6px 4px; font-size: 14px; color: #555; text-align: center; border-radius: 6px; }
+.nav-sub-prov .prov-link:hover { background: #f0f9f7; color: #11998e; }
+.nav-vip { color: #e74c3c; }
+.nav-vip:hover { color: #fff; background: linear-gradient(135deg, #f7971e, #ffd200); }
+.nav-vip-badge { display: inline-block; margin-left: 6px; padding: 1px 7px; font-size: 11px; font-weight: 700; color: #fff; background: linear-gradient(135deg, #ff416c, #ff4b2b); border-radius: 999px; vertical-align: middle; }
+.nav-vip:hover .nav-vip-badge { background: #fff; color: #d63b1f; }
+.nav-login { color: #fff; background: linear-gradient(135deg, #11998e, #38ef7d); }
+.nav-login:hover { color: #fff; background: linear-gradient(135deg, #0f857a, #2fd971); }
+/* 汉堡与抽屉遮罩只在移动端出现，桌面两条都是隐藏的 */
+.nav-toggle { display: none; align-items: center; justify-content: center; width: 40px; height: 40px; flex: none; border: none; border-radius: 10px; background: #f2f6f5; color: #11998e; cursor: pointer; }
+/* 三条横线纯 CSS 画：门户模板不引内联 SVG，也不吃系统字体对 ☰ 的支持差异 */
+.nav-toggle-bars { position: relative; display: block; width: 18px; height: 2px; border-radius: 2px; background: currentColor; }
+.nav-toggle-bars::before, .nav-toggle-bars::after { content: ""; position: absolute; left: 0; width: 18px; height: 2px; border-radius: 2px; background: currentColor; }
+.nav-toggle-bars::before { top: -6px; }
+.nav-toggle-bars::after { top: 6px; }
+.nav-backdrop { display: none; }
+
+/* 页面骨架 */
+.page { flex: 1; width: 100%; max-width: 1100px; margin: 0 auto; padding: 32px 20px 56px; }
+.crumb { font-size: 13px; color: #999; margin-bottom: 18px; }
+.crumb a { color: #11998e; }
+.crumb a:hover { text-decoration: underline; }
+
+/* hero */
+.hero { background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 20px; padding: 48px 40px; color: #fff; text-align: center; margin-bottom: 28px; }
+.hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 14px; }
+.hero p { font-size: 16px; opacity: 0.95; max-width: 640px; margin: 0 auto 24px; }
+.hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-hero { background: #fff; color: #11998e; border-radius: 999px; padding: 12px 30px; font-size: 16px; font-weight: 700; }
+.btn-hero.ghost { background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.7); }
+.btn-hero:hover { opacity: 0.92; }
+
+/* 统计条 */
+.stats { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.stat { background: #fff; border-radius: 16px; padding: 20px 32px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); min-width: 140px; }
+.stat b { display: block; font-size: 28px; font-weight: 800; color: #11998e; }
+.stat span { font-size: 13px; color: #888; }
+
+/* 区块标题 */
+.sec { margin-bottom: 36px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; }
+.sec-title { font-size: 22px; font-weight: 800; }
+.sec-more { font-size: 13px; color: #11998e; }
+
+/* 卡片网格 */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.card { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); transition: transform 0.18s, box-shadow 0.18s; display: block; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(17,153,142,0.18); }
+.card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.card p { font-size: 13px; color: #888; }
+.card .chip { display: inline-block; font-size: 12px; padding: 2px 10px; border-radius: 999px; background: #eef7f4; color: #11998e; font-weight: 600; margin-top: 10px; }
+
+/* 栏目导航区 */
+.cat-nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.cat-group { background: #fff; border-radius: 16px; padding: 18px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+.cat-head { font-size: 16px; font-weight: 800; color: #11998e; }
+.cat-head:hover { text-decoration: underline; }
+.cat-count { font-size: 12px; font-weight: 600; color: #999; margin-left: 6px; }
+.cat-sub { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; }
+.cat-sub a { font-size: 13px; color: #666; }
+.cat-sub a:hover { color: #11998e; }
+
+/* 首页「地方动态」：一行一个大区，标签 + 该省链接平铺 */
+.prov-rows { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 13px; }
+.prov-row { display: flex; align-items: flex-start; gap: 14px; }
+.prov-row > .prov-region { flex: none; width: 52px; padding: 3px 0; font-size: 13px; font-weight: 700; color: #11998e; background: #eef7f4; border-radius: 6px; text-align: center; }
+.prov-links { display: flex; flex-wrap: wrap; gap: 7px 18px; }
+.prov-links a { font-size: 14px; color: #555; }
+.prov-links a:hover { color: #11998e; text-decoration: underline; }
+
+/* 首页栏目块：一行两个 */
+/* minmax(0,1fr) 而非 1fr：1fr 的最小轨宽是 auto，会被不换行的长标题/两列卡片的 min-content 顶开，
+   导致上下两行的中缝错位（题库行左宽右窄、资讯行对半）。0 下限让两栏恒等分。 */
+.cat-blocks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+/* 首页题库：章节习题 + 历年真题并排一行，右侧卡片竖排铺满本列 */
+.bank-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; margin-bottom: 36px; }
+.bank-row > .sec { margin-bottom: 0; }
+.bank-side .grid { grid-template-columns: 1fr; }
+/* 两栏卡片等高：简介固定占两行，chip 贴底，左右行高才能对齐 */
+.bank-row .card { display: flex; flex-direction: column; }
+.bank-row .card p { min-height: 40px; line-height: 20px; margin-bottom: 10px; }
+.bank-row .card .chip { margin-top: auto; }
+.cat-block .art-item { padding: 16px 18px; }
+.cat-block .art-main h3 {
+  font-size: 16px; line-height: 24px; height: 24px; margin-bottom: 8px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* 文章列表 */
+.art-list { display: flex; flex-direction: column; gap: 14px; }
+.art-item { background: #fff; border-radius: 14px; padding: 18px 20px; box-shadow: 0 3px 12px rgba(0,0,0,0.05); display: flex; gap: 18px; transition: transform 0.16s, box-shadow 0.16s; }
+.art-item:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(17,153,142,0.15); }
+.art-cover { width: 150px; height: 100px; border-radius: 10px; object-fit: cover; flex-shrink: 0; background: #eef2f1; }
+.art-main { flex: 1; min-width: 0; }
+.art-main h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.art-main h3 a:hover { color: #11998e; }
+.art-sum { font-size: 13px; color: #888; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.art-meta { font-size: 12px; color: #aaa; margin-top: 10px; display: flex; gap: 14px; flex-wrap: wrap; }
+.art-meta .tag { color: #11998e; background: #eef7f4; padding: 1px 8px; border-radius: 999px; }
+
+/* 分页 */
+.pager { display: flex; gap: 8px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+.pager a, .pager span { padding: 7px 14px; border-radius: 999px; background: #fff; font-size: 14px; color: #555; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.pager span.cur { background: linear-gradient(135deg, #11998e, #38ef7d); color: #fff; font-weight: 700; }
+.pager a:hover { color: #11998e; }
+
+/* 文章详情 */
+.detail { background: #fff; border-radius: 18px; padding: 36px 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.detail h1 { font-size: 26px; font-weight: 800; line-height: 1.4; margin-bottom: 16px; }
+.detail-meta { font-size: 13px; color: #999; padding-bottom: 18px; border-bottom: 1px solid #f0f0f0; margin-bottom: 24px; display: flex; gap: 18px; flex-wrap: wrap; }
+.article-body { font-size: 16px; color: #333; line-height: 1.9; }
+.article-body p { margin-bottom: 16px; }
+.article-body h2 { font-size: 21px; font-weight: 700; margin: 26px 0 14px; }
+.article-body h3 { font-size: 18px; font-weight: 700; margin: 22px 0 12px; }
+.article-body img { max-width: 100%; height: auto; border-radius: 10px; margin: 12px 0; }
+.article-body ul, .article-body ol { margin: 0 0 16px 24px; }
+.article-body li { margin-bottom: 8px; }
+.article-body blockquote { border-left: 4px solid #11998e; background: #f0f9f7; padding: 12px 18px; margin: 16px 0; color: #555; border-radius: 0 8px 8px 0; }
+.article-body a { color: #11998e; text-decoration: underline; }
+.article-body table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+.article-body th, .article-body td { border: 1px solid #e3e8e7; padding: 9px 12px; text-align: left; font-size: 14px; }
+.article-body th { background: #f4f9f8; }
+
+/* 文末 CTA */
+.cta-banner { background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 18px; padding: 32px; text-align: center; color: #fff; margin-top: 28px; }
+.cta-banner h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+.cta-banner p { opacity: 0.95; margin-bottom: 20px; font-size: 14px; }
+.cta-banner .hero-cta { margin-top: 0; }
+
+/* 空态 */
+.empty { text-align: center; color: #999; padding: 60px 20px; }
+.empty .empty-icon { font-size: 48px; display: block; margin-bottom: 14px; }
+.empty-out { margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.empty-out a { padding: 8px 20px; border-radius: 999px; background: #fff; font-size: 14px; color: #11998e; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.empty-out a:hover { background: #eef7f4; }
+
+/* 页脚 */
+.footer { background: #2d3436; color: rgba(255,255,255,0.75); text-align: center; padding: 26px 20px; font-size: 14px; }
+
+/* 栏目页 / 文章页：内容列 + 右侧栏 */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; align-items: start; }
+.side { display: flex; flex-direction: column; gap: 18px; }
+.side-card { background: #fff; border-radius: 16px; padding: 18px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+.side-title { font-size: 16px; font-weight: 800; margin-bottom: 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.side-title a { font-size: 12px; font-weight: 600; color: #11998e; }
+.side-subjects { display: flex; flex-direction: column; gap: 10px; }
+.side-subject { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 14px; }
+/* flex:1 + min-width:0 显式写出来：长科目名（如「政策与法律法规」）在窄栏里必须能收缩成省略号，
+   不能靠 overflow 推导出的自动最小尺寸，那是浏览器实现细节 */
+.side-subject b { flex: 1 1 auto; min-width: 0; font-weight: 600; color: #2d3436; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.side-subject span { flex: none; font-size: 12px; color: #999; }
+.side-btns { display: flex; gap: 10px; margin-top: 16px; }
+.btn-side { flex: 1; text-align: center; padding: 9px 0; border-radius: 999px; font-size: 14px; font-weight: 700; background: linear-gradient(135deg, #11998e, #38ef7d); color: #fff; }
+.btn-side:hover { opacity: 0.92; }
+.btn-side.ghost { background: #eef7f4; color: #11998e; }
+.rank-list, .news-list { display: flex; flex-direction: column; gap: 11px; }
+.rank-item, .news-item { display: flex; align-items: baseline; gap: 10px; font-size: 14px; }
+.rank-item a, .news-item a { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #444; }
+.rank-item a:hover, .news-item a:hover { color: #11998e; }
+.rank-num { flex: none; width: 18px; height: 18px; line-height: 18px; text-align: center; border-radius: 5px; font-size: 12px; font-weight: 700; background: #f0f2f1; color: #999; }
+.rank-item.top .rank-num { background: linear-gradient(135deg, #ff416c, #ff4b2b); color: #fff; }
+.rank-item em { flex: none; font-style: normal; font-size: 12px; color: #bbb; }
+.news-item time { flex: none; font-size: 12px; color: #aaa; }
+
+/* 右缘悬浮小程序码（与 /tiku 的悬浮栏同款） */
+.float-qr { position: fixed; right: 18px; top: 50%; transform: translateY(-50%); z-index: 900; display: none; flex-direction: column; gap: 14px; }
+.fqr-item { position: relative; background: #fff; border-radius: 16px; padding: 16px 12px 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.12); text-align: center; width: 196px; transition: transform 0.18s, box-shadow 0.18s; }
+.fqr-item:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(17,153,142,0.22); }
+.fqr-img { width: 172px; height: 172px; object-fit: contain; border-radius: 8px; display: block; margin: 0 auto; }
+.fqr-label { font-size: 14px; color: #555; font-weight: 700; margin-top: 10px; }
+.fqr-sub { font-size: 12px; color: #aaa; margin-top: 3px; }
+.fqr-close { position: absolute; top: 6px; right: 6px; z-index: 2; width: 22px; height: 22px; border: none; border-radius: 50%; background: rgba(0,0,0,0.06); color: #999; font-size: 15px; line-height: 1; cursor: pointer; }
+.fqr-close:hover { background: #11998e; color: #fff; }
+.fqr-open { position: fixed; right: 18px; bottom: 90px; z-index: 900; width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer; background: linear-gradient(135deg, #11998e, #38ef7d); color: #fff; font-size: 20px; box-shadow: 0 6px 20px rgba(17,153,142,0.35); display: none; }
+.fqr-open:hover { opacity: 0.9; }
+
+/* 同样要 minmax(0,1fr)：单列时 1fr 的 auto 下限等于内容的 min-content，
+   窄屏下会被表格/长英文串顶开，整页就出横向滚动条 */
+@media (max-width: 960px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* 顶栏恢复单行（logo + 汉堡），导航本体改为左侧滑出抽屉。
+     .topbar 自身是层叠上下文，z-index 必须高于根上下文里的 .float-qr(900)，否则抽屉被悬浮小程序码压住 */
+  .topbar { z-index: 1200; }
+  .topbar-inner { padding: 10px 14px; gap: 10px; }
+  .topbar-left { flex-direction: row; align-items: center; justify-content: space-between; width: 100%; gap: 10px; }
+  .logo { font-size: 22px; }
+  .brand-name { font-size: 17px; }
+  .nav-toggle { display: flex; }
+
+  /* 抽屉用 transform 移出视口而不是 display:none：链接照常参与渲染，爬虫与用户拿到同一份 DOM */
+  .nav {
+    position: fixed; top: 0; left: 0; bottom: 0; width: min(84vw, 320px); margin: 0;
+    flex-direction: column; align-items: stretch; flex-wrap: nowrap; gap: 0;
+    padding: 10px 0 28px; background: #fff; box-shadow: 2px 0 22px rgba(0,0,0,0.18);
+    overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+    transform: translateX(-100%); transition: transform 0.22s ease; z-index: 1200;
+  }
+  html.nav-open .nav { transform: none; }
+  /* iOS Safari 上这条锁不住背景滚动，主要靠抽屉的 overscroll-behavior 兜底 */
+  html.nav-open { overflow: hidden; }
+  /* 遮罩必须挂在 html.nav-open 上：只写 .nav-backdrop{display:block} 会让它在手机端常开，
+     一层 fixed inset:0 盖住整页，页面所有点击都被它吃掉 */
+  html.nav-open .nav-backdrop { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.42); z-index: 1190; }
+
+  .nav-drop { width: 100%; }
+  .nav-link { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-radius: 0; font-size: 15px; }
+  .nav-vip, .nav-login { margin: 8px 16px 0; justify-content: center; border-radius: 999px; }
+  .nav-caret { transition: transform 0.18s; }
+  .nav-drop.open .nav-caret { transform: rotate(180deg); }
+  /* 抽屉内下拉改为手风琴：基础规则依旧不写 display，展开态交给特异性更高的 .nav-drop.open */
+  .nav-sub { position: static; min-width: 0; padding: 0 14px 10px; box-shadow: none; border-radius: 0; }
+  .nav-drop.open .nav-sub { display: block; }
+  .nav-sub a { white-space: normal; padding: 9px 10px; border-radius: 8px; }
+  .nav-sub-prov { width: auto; min-width: 0; padding: 0 14px 10px; grid-template-columns: repeat(3, 1fr); gap: 2px 6px; }
+  .nav-sub-prov .prov-link { padding: 8px 4px; }
+  .nav-drop.open .nav-sub-prov { display: grid; }
+
+  /* 正文区排版收紧 */
+  .page { padding: 18px 14px 40px; }
+  .hero { padding: 26px 16px; }
+  .hero h1 { font-size: 21px; }
+  .hero p { font-size: 14px; margin-bottom: 18px; }
+  .btn-hero { padding: 11px 22px; font-size: 15px; }
+  .stats { gap: 10px; }
+  .stat { flex: 1 1 calc(50% - 5px); min-width: 0; padding: 14px 10px; }
+  .stat b { font-size: 22px; }
+  .sec { margin-bottom: 26px; }
+  .sec-title { font-size: 18px; }
+  .sec-head { margin-bottom: 12px; }
+  .cat-nav { grid-template-columns: minmax(0, 1fr); }
+  .cat-blocks { grid-template-columns: minmax(0, 1fr); }
+  .bank-row { grid-template-columns: minmax(0, 1fr); }
+  /* 240px 是最小轨宽，比 320px 屏的正文列（292px）还宽不了，但 280px 以下的小屏会顶出轨道；
+     min(240px,100%) 让它在极窄容器里自动退让 */
+  .grid { grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); }
+  /* 首页栏目块的一行截断是靠 nowrap 实现的，长标题的 min-content 会把 1fr 轨撑到 500px+，
+     手机上宁可换成两行 clamp，也不能让 nowrap 参与固有宽度计算 */
+  .cat-block .art-main h3 {
+    white-space: normal; height: auto; line-height: 22px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  }
+  .cat-group { padding: 14px 16px; }
+  .prov-rows { padding: 16px; }
+  .side-card { padding: 14px 16px; }
+  .detail { padding: 20px 16px; }
+  .detail h1 { font-size: 21px; }
+  .article-body h2 { font-size: 18px; margin: 22px 0 10px; }
+  .article-body h3 { font-size: 16px; margin: 18px 0 10px; }
+  .article-body { overflow-wrap: anywhere; }
+  .article-body ul, .article-body ol { margin-left: 20px; }
+  .article-body blockquote { padding: 10px 14px; }
+  /* 正文表格是 CMS 生成的，列数不可控：display:block + 自身横向滚动，宽表就在卡片中滚，
+     不要把整页撑出滚动条（word-break 不影响固有宽度计算，只有 anywhere 才会） */
+  .article-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
+  .article-body th, .article-body td { padding: 6px 8px; font-size: 13px; word-break: break-word; }
+  .art-item { flex-direction: column; gap: 12px; padding: 14px; }
+  .art-cover { width: 100%; height: 130px; }
+  /* 标题/摘要里偶尔有长英文串或官方文件 URL：break-word 不参与固有宽度计算，
+     只有 anywhere 能让它折行，否则一行撑出卡片就把整页顶出横向滚动 */
+  .art-main h3, .art-sum, .detail h1, .card h3, .cat-head, .sec-title { overflow-wrap: anywhere; }
+  .pager { gap: 6px; margin-top: 22px; }
+  .pager a, .pager span { padding: 6px 12px; font-size: 13px; }
+  .cta-banner { padding: 22px 16px; }
+  .cta-banner h3 { font-size: 18px; }
+  .empty { padding: 40px 16px; }
+  .footer { padding: 20px 14px; font-size: 13px; }
+  .prov-row { flex-direction: column; gap: 7px; }
+  .prov-row > .prov-region { width: 64px; }
+}
+</style>
+</head>
+<body>
+<div class="site">
+  <header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a class="brand" href="/">
+        <span class="logo">&#x1F9ED;</span>
+        <span class="brand-name">考导游网</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="打开菜单">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" id="siteNav">
+        <a href="/" class="nav-link">首页</a>
+        <div class="nav-drop">
+          <a class="nav-link" href="/kaoshi-dongtai">考试动态</a>
+          <div class="nav-sub">
+            <a href="/kaoshi-dongtai/kaoshi-gonggao">考试公告</a><a href="/kaoshi-dongtai/kaoshi-zhengce">考试政策</a><a href="/kaoshi-dongtai/kaoshi-dagang">考试大纲</a>
+          </div>
+        </div>
+        <div class="nav-drop">
+          <a class="nav-link" href="/baoming">考试报名</a>
+          <div class="nav-sub">
+            <a href="/baoming/baoming-tongzhi">报名通知</a><a href="/baoming/baokao-tiaojian">报考条件</a><a href="/baoming/baokao-liucheng">报考流程</a><a href="/baoming/zhunkaozheng-dayin">准考证打印</a>
+          </div>
+        </div>
+        <div class="nav-drop">
+          <a class="nav-link" href="/chengji">成绩查询</a>
+          <div class="nav-sub">
+            <a href="/chengji/chengji-chaxun">成绩查询</a><a href="/chengji/hege-biaozhun">合格标准</a>
+          </div>
+        </div>
+        <div class="nav-drop">
+          <a class="nav-link" href="/zhengshu">证书办理</a>
+          <div class="nav-sub">
+            <a href="/zhengshu/zhengshu-lingqu">证书领取</a><a href="/zhengshu/daoyouzheng-shenling">导游证申领</a><a href="/zhengshu/nianshen-huanzheng">年审换证</a>
+          </div>
+        </div>
+        <div class="nav-drop">
+          <span class="nav-link">地方动态<span class="nav-caret">&#x25BE;</span></span>
+          <div class="nav-sub nav-sub-prov">
+            
+              <span class="prov-region">华北</span>
+              <a class="prov-link" href="/beijing">北京</a><a class="prov-link" href="/tianjin">天津</a><a class="prov-link" href="/hebei">河北</a><a class="prov-link" href="/shanxi">山西</a><a class="prov-link" href="/neimenggu">内蒙古</a>
+            
+              <span class="prov-region">东北</span>
+              <a class="prov-link" href="/liaoning">辽宁</a><a class="prov-link" href="/jilin">吉林</a><a class="prov-link" href="/heilongjiang">黑龙江</a>
+            
+              <span class="prov-region">华东</span>
+              <a class="prov-link" href="/shanghai">上海</a><a class="prov-link" href="/jiangsu">江苏</a><a class="prov-link" href="/zhejiang">浙江</a><a class="prov-link" href="/anhui">安徽</a><a class="prov-link" href="/fujian">福建</a><a class="prov-link" href="/jiangxi">江西</a><a class="prov-link" href="/shandong">山东</a>
+            
+              <span class="prov-region">中南</span>
+              <a class="prov-link" href="/henan">河南</a><a class="prov-link" href="/hubei">湖北</a><a class="prov-link" href="/hunan">湖南</a>
+            
+              <span class="prov-region">华南</span>
+              <a class="prov-link" href="/guangdong">广东</a><a class="prov-link" href="/guangxi">广西</a><a class="prov-link" href="/hainan">海南</a>
+            
+              <span class="prov-region">西南</span>
+              <a class="prov-link" href="/chongqing">重庆</a><a class="prov-link" href="/sichuan">四川</a><a class="prov-link" href="/guizhou">贵州</a><a class="prov-link" href="/yunnan">云南</a><a class="prov-link" href="/xizang">西藏</a>
+            
+              <span class="prov-region">西北</span>
+              <a class="prov-link" href="/shaanxi">陕西</a><a class="prov-link" href="/gansu">甘肃</a><a class="prov-link" href="/qinghai">青海</a><a class="prov-link" href="/ningxia">宁夏</a><a class="prov-link" href="/xinjiang">新疆</a><a class="prov-link" href="/bingtuan">兵团</a>
+            
+          </div>
+        </div>
+        <div class="nav-drop">
+          <span class="nav-link">更多<span class="nav-caret">&#x25BE;</span></span>
+          <div class="nav-sub">
+            <a href="/beikao-fudao">备考辅导</a><a href="/zhenti-jiexi">历年真题</a><a href="/mianshi">面试指南</a><a href="/jianye">行业就业</a>
+          </div>
+        </div>
+        <a href="/tiku/?login=1" class="nav-link">在线题库</a>
+        <a href="/tiku/vip" class="nav-link nav-vip">开通会员<span class="nav-vip-badge">¥9.9</span></a>
+        <a href="/tiku/?login=1" class="nav-link nav-login" id="navLogin">登录 / 注册</a>
+      </nav>
+    </div>
+  </div>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+  <script>
+    // 纯装饰：本地带 token 就收起「登录 / 注册」。弹窗与否由 HTML 里硬编码的 ?login=1 决定，
+    // 不依赖这段脚本，所以即使 token 已失效、这里判错，进题库仍会弹登录。
+    try {
+      if (localStorage.getItem('kdaoyou_token')) {
+        var el = document.getElementById('navLogin');
+        if (el) el.parentNode.removeChild(el);
+      }
+    } catch (e) {}
+
+    (function () {
+      var mq = window.matchMedia('(max-width: 768px)');
+      var root = document.documentElement;
+      var nav = document.getElementById('siteNav');
+      var toggle = document.getElementById('navToggle');
+      var backdrop = document.getElementById('navBackdrop');
+      if (!nav || !toggle) return;
+
+      function closeAllDrops() {
+        var opened = nav.querySelectorAll('.nav-drop.open');
+        for (var i = 0; i < opened.length; i++) opened[i].classList.remove('open');
+      }
+      function setOpen(v) {
+        root.classList[v ? 'add' : 'remove']('nav-open');
+        toggle.setAttribute('aria-expanded', v ? 'true' : 'false');
+        toggle.setAttribute('aria-label', v ? '关闭菜单' : '打开菜单');
+      }
+
+      toggle.addEventListener('click', function () { setOpen(!root.classList.contains('nav-open')); });
+      if (backdrop) backdrop.addEventListener('click', function () { setOpen(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+
+      // 触屏无 hover：抽屉里点触发器先展开，展开后再点同一个才放行跳转。
+      // 只拦 click，DOM 与 href 一律不动，爬虫拿到的仍是完整链接。
+      nav.addEventListener('click', function (e) {
+        if (!mq.matches || !e.target.closest) return;
+        var trigger = e.target.closest('.nav-drop > .nav-link');
+        var drop = trigger ? trigger.parentNode : null;
+        if (drop && !drop.classList.contains('open')) {
+          e.preventDefault();
+          closeAllDrops();
+          drop.classList.add('open');
+          return;
+        }
+        if (e.target.closest('a')) setOpen(false);
+      });
+
+      var sync = function () { if (!mq.matches) { setOpen(false); closeAllDrops(); } };
+      if (mq.addEventListener) mq.addEventListener('change', sync);
+      else if (mq.addListener) mq.addListener(sync);
+      sync();
+    })();
+  </script>
+</header>
+
+  <main class="page">
+    <nav class="crumb">
+  <a href="/">首页</a>
+  
+    
+      <span> &#8250; </span><a href="/zhenti-jiexi">历年真题</a>
+    
+    
+  
+    
+    
+      <span> &#8250; </span><span>导游资格考试真题怎么用：回忆版的价值、局限与正确用法</span>
+    
+  
+</nav>
+
+    <div class="layout">
+    <div>
+    <article class="detail">
+      <h1>导游资格考试真题怎么用：回忆版的价值、局限与正确用法</h1>
+      <div class="detail-meta">
+        <span>2026-09-21</span>
+        <span>97 阅读</span>
+      </div>
+      <div class="article-body"><p>导游资格考试真题的正确用法是研究考法而不是背诵题目：先用它确认题型与分值结构，再从中提取高频章节和命题倾向，最后把暴露出来的薄弱点放回章节习题逐章补掉。本站题库收录了2023年至2025年的回忆版真题并配简版解析，正是按这个用法来组织的。</p><h2>一、回忆版真题到底值钱在哪</h2><p>全国导游资格考试不公布试卷与答案原卷，市面上能系统研究的历年题目基本都是考生考后回忆整理的版本。它的价值不在每道题本身，而在三个可复核的结构信息。</p><ul><li><strong>题型结构</strong>：考试为客观题机考，每张试卷单项选择题30题每题1分、多项选择题20题每题2分、判断题30题每题1分，合计100分。占比最重的是多选，这决定了平时练习的重心。</li><li><strong>章节倾向</strong>：回忆版按年份积累后，能看出哪些章节几乎年年出现、哪些章节长期未考，复习时间分配可以据此调整。</li><li><strong>考查深度</strong>：同一知识点是要求再认、要求精确数字，还是放在情境里做判断，比对不同年份即可感知。</li></ul><h2>二、三个必须诚实说明的局限</h2><ol><li><strong>非官方发布</strong>：没有任何一题能保证与原卷完全一致，回忆版是整理产物，题目数量、顺序、表述都可能与真实试卷有出入。</li><li><strong>信息有缺损</strong>：考生回忆存在遗漏与改写，个别题目残缺，本站在入库清洗时已对残缺项做修订处理，并把遗留疑点标注在解析字段里。</li><li><strong>时间差风险</strong>：法规条文会修订，早年题目按当时条文成立，放到现行规定下可能已经变化。这也是不能背题的核心原因——背下来的可能是过期结论。</li></ol><blockquote>真题是用来校准方向的仪器，不是用来默写的答卷。凡与现行法规冲突的内容，一律以现行规定和当年考试大纲为准。</blockquote><h2>三、三步用法：看结构、找倾向、补薄弱</h2><table><thead><tr><th>步骤</th><th>目的</th><th>具体动作</th></tr></thead><tbody><tr><td>第一轮：摸底</td><td>感知真实考试强度</td><td>考前2至3个月，用考试模式限时做一套，不纠结对错，只看各科得分结构。</td></tr><tr><td>第二轮：读考法</td><td>提取章节与题型倾向</td><td>逐年翻<a href="/zhenti-jiexi">历年真题解析栏目</a>与题库真题分区，标注高频章节，形成自己的重点清单。</td></tr><tr><td>第三轮：补薄弱</td><td>把失分点转化为得分点</td><td>回到<a href="/tiku/subjects">四科目章节习题</a>按章刷题，用错题本二刷错误选项分布，确认是真会而不是碰对。</td></tr></tbody></table><h2>四、让真题用法落地的站内工具</h2><p>题库的做题会话会记录进度并支持续做，答题统计能看到每个选项的错误分布——判断一个知识点是普遍性薄弱还是个别侥幸，看分布比看正确率更准。部分题目对未登录游客开放免费额度，会员则解锁全部题目、解析与统计，具体见<a href="/tiku/vip">会员权益</a>。</p><h2>五、时效提醒与下一步</h2><p>考试大纲与法规口径逐年微调，题目背后的条文以文化和旅游部当年公告及考试大纲为准；报名与考试安排见<a href="/kaoshi-dongtai">考试动态</a>。下一步建议：先到题库完成一套摸底练习，再按本文第二轮的方法列出高频章节清单，复习路线会清晰很多。</p></div>
+    </article>
+
+    <section class="cta-banner">
+      <h3>看完资讯，来刷几道题巩固一下</h3>
+      <p>限时 ¥9.9 开通会员，全部科目、全部试题畅刷</p>
+      <div class="hero-cta">
+        <a class="btn-hero" href="/tiku/subjects?login=1">进入题库</a>
+        <a class="btn-hero ghost" href="/tiku/vip">开通会员</a>
+      </div>
+    </section>
+    </div>
+
+    <aside class="side">
+
+  <div class="side-card">
+    <div class="side-title">在线题库 <a href="/tiku/subjects?login=1">全部科目 &#8250;</a></div>
+    <div class="side-subjects">
+      <!-- 题量为 0 的科目（如尚未导入真题的合卷）整行跳过，不显示「0 题」 -->
+      <div class="side-subject">
+        <b>科目一 政策与法律法规</b>
+        <span>15 章 · 1558 题</span>
+      </div>
+      <div class="side-subject">
+        <b>科目二 导游业务</b>
+        <span>10 章 · 1479 题</span>
+      </div>
+      <div class="side-subject">
+        <b>科目三 全国导游基础知识</b>
+        <span>11 章 · 1273 题</span>
+      </div>
+      <div class="side-subject">
+        <b>科目四 地方导游基础知识</b>
+        <span>4 章 · 924 题</span>
+      </div>
+      <div class="side-subject">
+        <b>科目一、科目二合卷</b>
+        <span>3 套 · 459 题</span>
+      </div>
+      <div class="side-subject">
+        <b>科目三、科目四合卷</b>
+        <span>3 套 · 491 题</span>
+      </div>
+    </div>
+    <div class="side-btns">
+      <a class="btn-side" href="/tiku/subjects?login=1">进入题库</a>
+      <a class="btn-side ghost" href="/tiku/vip">开通会员</a>
+    </div>
+  </div>
+
+  <div class="side-card">
+    <div class="side-title">热门排行</div>
+    <div class="rank-list">
+      <div class="rank-item top">
+        <span class="rank-num">1</span>
+        <a href="/beijing/beijing-2026-xianchang-kaoshi-jingdian-jiangjie-tiqian">2026年北京导游资格考试现场考试景点讲解题签汇总：六大景区讲解要点清单</a>
+        <em>326</em>
+      </div>
+      <div class="rank-item top">
+        <span class="rank-num">2</span>
+        <a href="/beijing/beijing-2026-xianchang-kaoshi-dagang">2026年北京导游资格现场考试大纲：景点讲解六大景区与综合能力考查范围</a>
+        <em>314</em>
+      </div>
+      <div class="rank-item top">
+        <span class="rank-num">3</span>
+        <a href="/hebei/hebei-2026-xianchang-kaoshi-dagang">2026年河北导游现场考试大纲：西柏坡、山海关等九个抽讲景点与中文外语类评分分值</a>
+        <em>261</em>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num">4</span>
+        <a href="/xizang/xizang-2026-xianchang-kaoshi-dagang">2026年西藏导游资格考试现场考试大纲（面试）：景点讲解占50%，人文14处、自然7处、红色3处</a>
+        <em>258</em>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num">5</span>
+        <a href="/xinjiang/xinjiang-2026-xianchang-kaoshi-dagang">2026年新疆导游资格考试现场考试大纲全文：18个中文类景点讲解要点与外语类8个考试景区</a>
+        <em>257</em>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num">6</span>
+        <a href="/kaoshi-dongtai/kaoshi-gonggao/2026-daoyou-kaoshi-tongzhi-quanwen-zhuanzai">文化和旅游部2026年全国导游资格考试通知全文（办市场函〔2026〕396号）</a>
+        <em>255</em>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num">7</span>
+        <a href="/jiangsu/jiangsu-2026-xianchang-kaoshi-dagang">2026年江苏导游资格考试现场考试大纲：中文类13个公共景区加1个设区市景区、外语类6个景区</a>
+        <em>232</em>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num">8</span>
+        <a href="/shanxi/shanxi-2026-xianchang-kaoshi-dagang">2026年山西导游现场考试大纲：云冈石窟、平遥古城等十二个抽讲景区与五类专题讲解要点</a>
+        <em>231</em>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num">9</span>
+        <a href="/liaoning/liaoning-2026-daoyou-kaoshi-tongzhi">辽宁考区2026年全国导游资格考试报名与考试安排：8月7日9:00开报、11月21日笔试、4考区就近选、初试250元</a>
+        <em>223</em>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num">10</span>
+        <a href="/jilin/jilin-2026-mianshi-dagang-zhongwenlei-jiangjieci">2026年吉林导游面试考试大纲全文与官方讲解词：长白山等12个中文类景点、5个外语类景点与评分分值</a>
+        <em>221</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-card">
+    <div class="side-title">最新资讯</div>
+    <div class="news-list">
+      <div class="news-item">
+        <time>11-07</time>
+        <a href="/hainan/hainan-2026-mianshi-kemu-daoyou-fuwu-nengli-tongzhi">2026年海南导游资格考试面试通知全文：11月22日闭卷机考、中文类38分钟外语类62分钟、省情概况必讲</a>
+      </div>
+      <div class="news-item">
+        <time>10-18</time>
+        <a href="/bingtuan/bingtuan-2026-xianchang-kaoshi-dagang">2026年兵团导游资格考试现场考试大纲全文：中文类18个景点、外语类8个与文明旅游单列项</a>
+      </div>
+      <div class="news-item">
+        <time>10-18</time>
+        <a href="/xinjiang/xinjiang-2026-xianchang-kaoshi-dagang">2026年新疆导游资格考试现场考试大纲全文：18个中文类景点讲解要点与外语类8个考试景区</a>
+      </div>
+      <div class="news-item">
+        <time>10-18</time>
+        <a href="/ningxia/ningxia-2026-xianchang-kaoshi-dagang">2026年宁夏导游资格考试现场考试大纲全文：13个景区讲解要点、外语类8个景点与分值时间口径</a>
+      </div>
+      <div class="news-item">
+        <time>10-18</time>
+        <a href="/qinghai/qinghai-2026-xianchang-kaoshi-dagang">2026年青海导游资格考试现场考试大纲全文：中文12个、外语5个景点与评分标准、考试时间</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-card">
+    <div class="side-title">相关备考文章</div>
+    <div class="news-list">
+      <div class="news-item">
+        <time>09-24</time>
+        <a href="/zhenti-jiexi/zhenti-he-zhangjie-xiti-xian-zuo-na-ge">真题和章节习题先做哪个？两者的功能差别</a>
+      </div>
+      <div class="news-item">
+        <time>09-23</time>
+        <a href="/zhenti-jiexi/daoyou-zhenti-kaofa-bianhua">近年导游真题的考法变化：从背条文到判情境</a>
+      </div>
+      <div class="news-item">
+        <time>09-19</time>
+        <a href="/zhenti-jiexi/kemu4-zhenti/difang-daoyou-jichu-zhishi-zhenti">科目四《地方导游基础知识》真题考法：省份分块与地方卷差异</a>
+      </div>
+      <div class="news-item">
+        <time>09-17</time>
+        <a href="/zhenti-jiexi/kemu3-zhenti/quanguo-daoyou-jichu-zhishi-zhenti">科目三《全国导游基础知识》真题考法：山岳水系、古建民族与文学</a>
+      </div>
+      <div class="news-item">
+        <time>09-15</time>
+        <a href="/zhenti-jiexi/kemu2-zhenti/daoyou-yewu-zhenti-kaofa">科目二《导游业务》真题考法：流程题与应变题的失分点</a>
+      </div>
+    </div>
+  </div>
+
+</aside>
+    </div>
+
+    <section class="sec">
+  <div class="sec-head">
+    <span class="sec-title">栏目导航</span>
+  </div>
+  <div class="cat-nav">
+    <div class="cat-group">
+      <a class="cat-head" href="/kaoshi-dongtai">考试动态</a>
+      <span class="cat-count">79 篇</span>
+      <div class="cat-sub">
+        <a href="/kaoshi-dongtai/kaoshi-gonggao">考试公告</a><a href="/kaoshi-dongtai/kaoshi-zhengce">考试政策</a><a href="/kaoshi-dongtai/kaoshi-dagang">考试大纲</a>
+      </div>
+    </div>
+    <div class="cat-group">
+      <a class="cat-head" href="/baoming">考试报名</a>
+      <span class="cat-count">35 篇</span>
+      <div class="cat-sub">
+        <a href="/baoming/baoming-tongzhi">报名通知</a><a href="/baoming/baokao-tiaojian">报考条件</a><a href="/baoming/baokao-liucheng">报考流程</a><a href="/baoming/zhunkaozheng-dayin">准考证打印</a>
+      </div>
+    </div>
+    <div class="cat-group">
+      <a class="cat-head" href="/chengji">成绩查询</a>
+      <span class="cat-count">6 篇</span>
+      <div class="cat-sub">
+        <a href="/chengji/chengji-chaxun">成绩查询</a><a href="/chengji/hege-biaozhun">合格标准</a>
+      </div>
+    </div>
+    <div class="cat-group">
+      <a class="cat-head" href="/zhengshu">证书办理</a>
+      <span class="cat-count">7 篇</span>
+      <div class="cat-sub">
+        <a href="/zhengshu/zhengshu-lingqu">证书领取</a><a href="/zhengshu/daoyouzheng-shenling">导游证申领</a><a href="/zhengshu/nianshen-huanzheng">年审换证</a>
+      </div>
+    </div>
+    <div class="cat-group">
+      <a class="cat-head" href="/beikao-fudao">备考辅导</a>
+      <span class="cat-count">9 篇</span>
+      <div class="cat-sub">
+        <a href="/beikao-fudao/beikao-jingyan">备考经验</a><a href="/beikao-fudao/kaodian-jinghua">考点精华</a><a href="/beikao-fudao/xuexi-fangfa">学习方法</a>
+      </div>
+    </div>
+    <div class="cat-group">
+      <a class="cat-head" href="/zhenti-jiexi">历年真题</a>
+      <span class="cat-count">7 篇</span>
+      <div class="cat-sub">
+        <a href="/zhenti-jiexi/kemu1-zhenti">科目一真题</a><a href="/zhenti-jiexi/kemu2-zhenti">科目二真题</a><a href="/zhenti-jiexi/kemu3-zhenti">科目三真题</a><a href="/zhenti-jiexi/kemu4-zhenti">科目四真题</a>
+      </div>
+    </div>
+    <div class="cat-group">
+      <a class="cat-head" href="/mianshi">面试指南</a>
+      <span class="cat-count">23 篇</span>
+      <div class="cat-sub">
+        <a href="/mianshi/jingdian-jiangjie">景点讲解</a><a href="/mianshi/daoyouci-fanwen">导游词范文</a><a href="/mianshi/mianshi-wenda">面试问答</a>
+      </div>
+    </div>
+    <div class="cat-group">
+      <a class="cat-head" href="/jianye">行业就业</a>
+      <span class="cat-count">6 篇</span>
+      <div class="cat-sub">
+        <a href="/jianye/jiuye-qianjing">就业前景</a><a href="/jianye/gongzi-daiyu">工资待遇</a><a href="/jianye/zhiye-guakao">执业挂靠</a>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <div>
+  <aside class="float-qr" id="floatQr">
+    <div class="fqr-item">
+      <button class="fqr-close" id="fqrClose" title="收起" type="button">&times;</button>
+      <img class="fqr-img" src="/mp-qr.png" alt="K导助手小程序码" />
+      <div class="fqr-label">K导助手 &#183; 小程序</div>
+      <div class="fqr-sub">扫码刷题 &#183; 多端同步</div>
+    </div>
+  </aside>
+  <button class="fqr-open" id="fqrOpen" title="小程序码" type="button">&#x1F4F1;</button>
+  <script>
+    (function () {
+      var qr = document.getElementById('floatQr');
+      var open = document.getElementById('fqrOpen');
+      if (!qr || !open) return;
+      var FIT_MIN_WIDTH = 1560;
+      var MOBILE_MAX_WIDTH = 768;
+      var pinned = null; // null=按视口自动，true=用户点开，false=用户收起
+      function render() {
+        var mobile = window.innerWidth <= MOBILE_MAX_WIDTH;
+        var show = !mobile && (pinned === null ? window.innerWidth >= FIT_MIN_WIDTH : pinned);
+        qr.style.display = show ? 'flex' : 'none';
+        open.style.display = mobile || show ? 'none' : 'block';
+      }
+      open.onclick = function () { pinned = true; render(); };
+      document.getElementById('fqrClose').onclick = function () { pinned = false; render(); };
+      window.addEventListener('resize', render);
+      render();
+    })();
+  </script>
+</div>
+  <footer class="footer">
+  <p>&copy; 2026 考导游网 www.kdaoyou.com · 让导游备考更简单</p>
+</footer>
+</div>
+</body>
+</html>

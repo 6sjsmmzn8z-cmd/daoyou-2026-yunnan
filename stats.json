@@ -1,0 +1,15 @@
+{
+  "unique_source_urls": 251,
+  "source_urls_saved": 233,
+  "source_urls_failed": 18,
+  "unique_saved_files": 229,
+  "file_types": {
+    ".html": 113,
+    ".docx": 1,
+    ".pdf": 104,
+    ".doc": 6,
+    ".zip": 2,
+    ".rar": 3
+  },
+  "bytes": 215146687
+}

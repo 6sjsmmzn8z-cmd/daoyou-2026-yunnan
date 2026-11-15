@@ -1,0 +1,47 @@
+name: Package study materials
+on:
+  workflow_dispatch:
+    inputs:
+      publish_release:
+        description: Publish archives to a GitHub Release
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify sources and build downloads
+        run: python3 scripts/build_downloads.py
+      - name: Save downloadable artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: daoyou-2026-yunnan
+          path: |
+            downloads/guide-all.zip
+            downloads/guide-core.zip
+            study.pdf
+            study.docx
+            资源总表.csv
+          compression-level: 0
+          retention-days: 30
+      - name: Publish release
+        if: inputs.publish_release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          tag="materials-${GITHUB_RUN_NUMBER}"
+          gh release create "$tag" \
+            --target "$GITHUB_SHA" \
+            --title "2026导游考试资料下载 ${GITHUB_RUN_NUMBER}" \
+            --notes "完整包、核心包、PDF复习册、DOCX及来源表。资料截点2026-11-14；原创预测不保证命中。" \
+            downloads/guide-all.zip downloads/guide-core.zip study.pdf study.docx 资源总表.csv
