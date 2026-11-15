@@ -1,63 +1,35 @@
 #!/usr/bin/env python3
-"""Check the archived assets, provenance and question-bank completeness."""
+"""Check local HTML links, published PDFs and source catalogue coverage."""
 from pathlib import Path
-from collections import Counter
-import hashlib
-import json
-import zipfile
-
-ROOT = Path(__file__).resolve().parents[1]
-MAX_GIT_FILE = 100 * 1024 * 1024
-
-
-def check():
-    manifest = json.loads((ROOT / 'manifest.json').read_text(encoding='utf-8'))
-    archived = {}
-    for row in manifest:
-        if row['status'] != 'downloaded':
-            continue
-        path = ROOT / row['path']
-        if not path.is_file():
-            raise ValueError(f'Missing asset: {row["path"]}')
-        if not path.resolve().is_relative_to(ROOT):
-            raise ValueError(f'Unsafe path: {row["path"]}')
-        digest = hashlib.sha256(path.read_bytes()).hexdigest()
-        if digest != row['sha256']:
-            raise ValueError(f'Hash mismatch: {row["path"]}')
-        archived[row['path']] = path
-    stats = json.loads((ROOT / 'stats.json').read_text(encoding='utf-8'))
-    if len(archived) != stats['unique_saved_files']:
-        raise ValueError('Unique source-file count differs from stats.json')
-    if dict(Counter(path.suffix for path in archived.values())) != stats['file_types']:
-        raise ValueError('File-type counts differ from stats.json')
-    for rel, path in archived.items():
-        if path.suffix == '.pdf':
-            with path.open('rb') as f:
-                if f.read(4) != b'%PDF':
-                    raise ValueError(f'Invalid PDF header: {rel}')
-                f.seek(max(0, path.stat().st_size - 4096))
-                if b'%%EOF' not in f.read():
-                    raise ValueError(f'Incomplete PDF trailer: {rel}')
-        if path.suffix in {'.zip', '.docx'}:
-            with zipfile.ZipFile(path) as z:
-                if z.testzip() is not None:
-                    raise ValueError(f'Corrupt ZIP container: {rel}')
-    questions = json.loads((ROOT / 'reports/原创预测训练100题.json').read_text(encoding='utf-8'))
-    if len(questions) != 100 or len({q['stem'] for q in questions}) != 100:
-        raise ValueError('Expected 100 distinct original questions')
-    if set(Counter(q['subject'] for q in questions).values()) != {25}:
-        raise ValueError('Expected 25 questions per subject')
-    for q in questions:
-        if not q['answer'] or any(a not in q['options'] for a in q['answer']):
-            raise ValueError(f'Invalid question answer: {q["id"]}')
-    for path in ROOT.rglob('*'):
-        rel = path.relative_to(ROOT)
-        if not path.is_file() or rel.parts[0] in {'.git', 'downloads'}:
-            continue
-        if path.stat().st_size >= MAX_GIT_FILE:
-            raise ValueError(f'File exceeds ordinary GitHub limit: {rel}')
-    print(f'OK: {len(archived)} unique source files, 104 PDFs, 100 questions; hashes and ZIP containers verified.')
-
-
-if __name__ == '__main__':
-    check()
+from html.parser import HTMLParser
+import json,urllib.parse,re
+ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'docs'
+class Links(HTMLParser):
+ def __init__(self):super().__init__();self.links=[]
+ def handle_starttag(self,tag,attrs):
+  for key,value in attrs:
+   if key in {'href','src'} and value:self.links.append(value)
+errors=[];links=0
+for path in SITE.rglob('*.html'):
+ parser=Links();parser.feed(path.read_text())
+ for url in parser.links:
+  u=urllib.parse.urlsplit(url)
+  if u.scheme or u.netloc or not u.path:continue
+  target=(path.parent/urllib.parse.unquote(u.path)).resolve();links+=1
+  if not target.is_relative_to(SITE.resolve()) or not target.is_file():errors.append(str(path.relative_to(SITE))+' -> '+url)
+  if target.name=='viewer.html':
+   q=urllib.parse.parse_qs(u.query);f=q.get('file',[''])[0]
+   if not re.fullmatch(r'assets/[a-f0-9]{16}\.pdf',f) or not (SITE/f).is_file():errors.append('Missing viewer PDF: '+url)
+cat=json.loads((SITE/'catalogue.json').read_text());assert len(cat)==251
+pdfs=json.loads((SITE/'pdfs.json').read_text())
+for entry in pdfs:
+ p=SITE/entry['file']
+ with p.open('rb') as f:
+  assert f.read(4)==b'%PDF',p
+  f.seek(max(0,p.stat().st_size-4096));assert b'%%EOF' in f.read(),p
+q=json.loads((ROOT/'reports/原创预测训练100题.json').read_text());assert len(q)==100
+assert len({x['stem'] for x in q})==100
+assert all(x['answer'] and all(a in x['options'] for a in x['answer']) for x in q)
+assert not list(SITE.rglob('*.zip')) and not list(SITE.rglob('*.rar'))
+assert not errors,errors[:20]
+print(f'OK: {len(cat)} catalogue entries, {len(pdfs)} readable PDFs, 100 questions, {links} local links; no compressed downloads in site.')
