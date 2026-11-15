@@ -1,0 +1,668 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-11-15",
+  "timezone": "Etc/UTC",
+  "repository": "https://github.com/6sjsmmzn8z-cmd/daoyou-2026-yunnan",
+  "applies_to": "本仓库当前这位学习者，非所有仓库使用者",
+  "learner_background": "已通读四本教材，许多知识点尚未形成稳定记忆",
+  "session_state": "paused_by_user",
+  "current_request": "今天停止出题；整理个人记忆和分科分类知识表，提交并推送仓库",
+  "preferences": [
+    "一问一答",
+    "笔试为主，偏好多选",
+    "提高区分度，少用常识干扰项",
+    "客观指出漏选和误选，不迎合",
+    "答对的具体知识点不再问，改写同点也不重复",
+    "按科按门类给出可背对应表，非只有目录",
+    "新Agent先读本文件与根目录交接说明"
+  ],
+  "status_definitions": {
+    "passed_skip": "本次明确通过的具体判断或对应；后续跳过，不推定整科或长期记忆",
+    "weak_retest": "已经出现明确漏选或误选；已讲解但尚未通过复测",
+    "unassessed": "无充分答题证据，既不算会也不算不会",
+    "coached_pass": "有提示反复训练后通过，不等于独立能力已验证"
+  },
+  "knowledge_points": [
+    {
+      "id": "P01",
+      "subject": "政策与法律法规",
+      "statement": "仅取得导游资格证，尚不能不领导游证直接独立承接业务",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S01"
+      ],
+      "scope_limit": "仅此判断已通过；办证申请路径与旅行社委派要求未完整验证"
+    },
+    {
+      "id": "P02",
+      "subject": "导游业务",
+      "statement": "自由活动应提示安全并约定集合时间地点",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S02"
+      ],
+      "scope_limit": "具体做法通过，不表示完整服务流程已掌握"
+    },
+    {
+      "id": "P03",
+      "subject": "导游业务",
+      "statement": "游客突发疾病时优先组织救助并联系医疗",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S04"
+      ],
+      "scope_limit": "仅首要事项，不推定完整应急流程"
+    },
+    {
+      "id": "P04",
+      "subject": "政策与法律法规",
+      "statement": "涉及费用的行程调整不得擅自承诺，须按程序协商确认",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S05"
+      ],
+      "scope_limit": "按原题情境通过；题目笼统，不得概括为所有口头变更无效"
+    },
+    {
+      "id": "P05",
+      "subject": "导游业务",
+      "statement": "离团简化情境中应说明风险后果并记录",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S06"
+      ],
+      "scope_limit": "不代表已掌握所有离团条件，也不代表签字免责"
+    },
+    {
+      "id": "P06",
+      "subject": "导游业务",
+      "statement": "不能为避免投诉而隐瞒服务失误",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S07"
+      ],
+      "scope_limit": "基础职业道德判断通过"
+    },
+    {
+      "id": "P07",
+      "subject": "导游业务",
+      "statement": "退货争执先缓和情绪，再依凭证与退换规则协商",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S08"
+      ],
+      "scope_limit": "仅初步协调，不推定退货权的所有法定条件"
+    },
+    {
+      "id": "P08",
+      "subject": "政策与法律法规",
+      "statement": "守法守德、维护旅游者合法权益、不得强行推销或擅改行程",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S09"
+      ],
+      "scope_limit": "只跳过本次测过的基本义务"
+    },
+    {
+      "id": "P09",
+      "subject": "全国导游基础知识",
+      "statement": "文化景观属于文化遗产",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S10"
+      ],
+      "scope_limit": "具体概念通过，不推定所有项目归类"
+    },
+    {
+      "id": "P10",
+      "subject": "全国导游基础知识",
+      "statement": "我国存在文化与自然双重遗产",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S10"
+      ],
+      "scope_limit": "排除不存在双重遗产的错误项"
+    },
+    {
+      "id": "P11",
+      "subject": "全国导游基础知识",
+      "statement": "自然遗产价值涉及自然美与科学价值",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S10"
+      ],
+      "scope_limit": "不要求所有自然项目同时具备全部自然标准"
+    },
+    {
+      "id": "P12",
+      "subject": "全国导游基础知识",
+      "statement": "按明清官式建筑通常等级，重檐庑殿顶高于重檐歇山顶",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S11"
+      ],
+      "scope_limit": "保留时代制度和重檐限定"
+    },
+    {
+      "id": "P13",
+      "subject": "全国导游基础知识",
+      "statement": "歇山顶又称九脊顶",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S11"
+      ],
+      "scope_limit": "名称对应通过"
+    },
+    {
+      "id": "P14",
+      "subject": "全国导游基础知识",
+      "statement": "悬山屋面伸出山墙，硬山屋面不伸出山墙",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S11"
+      ],
+      "scope_limit": "两个反向表述均正确排除"
+    },
+    {
+      "id": "P15",
+      "subject": "全国导游基础知识",
+      "statement": "六安瓜片属于绿茶",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S12"
+      ],
+      "scope_limit": "具体对应通过"
+    },
+    {
+      "id": "P16",
+      "subject": "全国导游基础知识",
+      "statement": "安溪铁观音属于乌龙茶",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S12"
+      ],
+      "scope_limit": "具体对应通过"
+    },
+    {
+      "id": "P17",
+      "subject": "全国导游基础知识",
+      "statement": "白毫银针不是绿茶",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S12"
+      ],
+      "scope_limit": "只能证明正确排除错误茶类；主动回答白茶未验证"
+    },
+    {
+      "id": "P18",
+      "subject": "全国导游基础知识",
+      "statement": "明清乡试第一名称解元",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S13"
+      ],
+      "scope_limit": "具体对应通过"
+    },
+    {
+      "id": "P19",
+      "subject": "全国导游基础知识",
+      "statement": "明清殿试第一名称状元",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S13"
+      ],
+      "scope_limit": "具体对应通过"
+    },
+    {
+      "id": "P20",
+      "subject": "全国导游基础知识",
+      "statement": "明清殿试由皇帝主持",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S13"
+      ],
+      "scope_limit": "具体判断通过"
+    },
+    {
+      "id": "P21",
+      "subject": "全国导游基础知识",
+      "statement": "苏绣主要产地苏州",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S14"
+      ],
+      "scope_limit": "具体对应通过"
+    },
+    {
+      "id": "P22",
+      "subject": "全国导游基础知识",
+      "statement": "粤绣包括以广州、潮州为代表的广绣与潮绣",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S14"
+      ],
+      "scope_limit": "具体产地对应通过"
+    },
+    {
+      "id": "P23",
+      "subject": "全国导游基础知识",
+      "statement": "蜀绣主要产地成都",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S14"
+      ],
+      "scope_limit": "具体对应通过"
+    },
+    {
+      "id": "P24",
+      "subject": "全国导游基础知识",
+      "statement": "湘绣主要产地不是湘西",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S14"
+      ],
+      "scope_limit": "仅正确排除湘西，主动回答长沙未验证"
+    },
+    {
+      "id": "P25",
+      "subject": "全国导游基础知识",
+      "statement": "《梦溪笔谈》作者沈括",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S15"
+      ],
+      "scope_limit": "仅作者对应，不推定年代内容全部掌握"
+    },
+    {
+      "id": "P26",
+      "subject": "全国导游基础知识",
+      "statement": "《水经注》作者郦道元",
+      "status": "passed_skip",
+      "skip_reasking": true,
+      "evidence": [
+        "S15"
+      ],
+      "scope_limit": "仅作者对应，不推定年代内容全部掌握"
+    },
+    {
+      "id": "W01",
+      "subject": "全国导游基础知识",
+      "statement": "君山银针属于黄茶",
+      "status": "weak_retest",
+      "skip_reasking": false,
+      "evidence": [
+        "S12"
+      ],
+      "error_type": "omission",
+      "observed_answer": "漏选A，君山银针—黄茶",
+      "explanation_given": true,
+      "retest_passed": false
+    },
+    {
+      "id": "W02",
+      "subject": "全国导游基础知识",
+      "statement": "大红袍属于乌龙茶／青茶",
+      "status": "weak_retest",
+      "skip_reasking": false,
+      "evidence": [
+        "S12"
+      ],
+      "error_type": "wrong_selection",
+      "observed_answer": "误选D，大红袍—红茶",
+      "explanation_given": true,
+      "retest_passed": false
+    },
+    {
+      "id": "W03",
+      "subject": "全国导游基础知识",
+      "statement": "明清会试第一名称会元",
+      "status": "weak_retest",
+      "skip_reasking": false,
+      "evidence": [
+        "S13"
+      ],
+      "error_type": "omission",
+      "observed_answer": "漏选B；用户说忘记了",
+      "explanation_given": true,
+      "retest_passed": false
+    },
+    {
+      "id": "W04",
+      "subject": "全国导游基础知识",
+      "statement": "《营造法式》作者李诫",
+      "status": "weak_retest",
+      "skip_reasking": false,
+      "evidence": [
+        "S15"
+      ],
+      "error_type": "omission",
+      "observed_answer": "漏选A",
+      "explanation_given": true,
+      "retest_passed": false
+    },
+    {
+      "id": "W05",
+      "subject": "全国导游基础知识",
+      "statement": "《天工开物》作者宋应星",
+      "status": "weak_retest",
+      "skip_reasking": false,
+      "evidence": [
+        "S15"
+      ],
+      "error_type": "wrong_selection",
+      "observed_answer": "误选徐光启，与农政全书作者混淆",
+      "explanation_given": true,
+      "retest_passed": false
+    },
+    {
+      "id": "W06",
+      "subject": "全国导游基础知识",
+      "statement": "《农政全书》作者徐光启",
+      "status": "weak_retest",
+      "skip_reasking": false,
+      "evidence": [
+        "S15"
+      ],
+      "error_type": "wrong_selection",
+      "observed_answer": "误选宋应星，与天工开物作者混淆",
+      "explanation_given": true,
+      "retest_passed": false
+    },
+    {
+      "id": "U01",
+      "statement": "白毫银针属于白茶",
+      "status": "unassessed",
+      "skip_reasking": false,
+      "reason": "仅排除了绿茶，随后助手讲解，不是主动答出"
+    },
+    {
+      "id": "U02",
+      "statement": "湘绣的主要产地长沙",
+      "status": "unassessed",
+      "skip_reasking": false,
+      "reason": "仅排除了湘西，随后助手讲解，不是主动答出"
+    },
+    {
+      "id": "U03",
+      "statement": "明清殿试第一甲、第二甲、第三甲的赐称完整对应",
+      "status": "unassessed",
+      "skip_reasking": false,
+      "reason": "原题三甲措辞含糊，不据排除D判断掌握"
+    },
+    {
+      "id": "U04",
+      "statement": "取得资格后的法定导游证申请路径及旅行社委派条件",
+      "status": "unassessed",
+      "skip_reasking": false,
+      "reason": "用户只答还需注册；原助手讲解曾有平台挂靠错误"
+    },
+    {
+      "id": "I01",
+      "subject": "云南中文面试",
+      "statement": "游客抱怨大理古城商业化时，表示理解并给出附近民居小巷的具体选择",
+      "status": "coached_pass",
+      "skip_reasking": true,
+      "evidence": [
+        "S03"
+      ],
+      "scope_limit": "多次提示后练成；未验证独立应变，当前优先笔试"
+    }
+  ],
+  "assessment_limits": [
+    "不计算正式模拟分数或合格概率",
+    "不据少量基础题判定整科强弱",
+    "不使用原先未计算而全零的coverage字段",
+    "表内新增内容不是掌握证据",
+    "未作答的末题不计错",
+    "口头行程变更并非一律无效",
+    "资格证题理由不完整，不得将挂靠平台当成法定要求",
+    "世界遗产题A歧义不计错",
+    "科举三甲D措辞含糊，不据排除该项确认整套称谓已会"
+  ],
+  "resume": {
+    "do_not_resume_questions_until_requested": true,
+    "last_answered_question_id": "S15",
+    "pending_question_id": "S16",
+    "pending_question_answered": false,
+    "pending_question_can_be_resumed": true,
+    "priority_weak_point_ids": [
+      "W01",
+      "W02",
+      "W03",
+      "W04",
+      "W05",
+      "W06"
+    ],
+    "suggestion": "用户愿意继续后可先做S16；穿插未测的新点，跳过passed_skip；答对后更新证据并移出复测队列"
+  },
+  "sessions": [
+    {
+      "date": "2026-11-15",
+      "questions": [
+        {
+          "id": "S01",
+          "topic": "资格证能否代替导游证直接执业",
+          "user_answer": "错；还需注册",
+          "expected_answer": "false",
+          "result": "correct_judgment_partial_reason"
+        },
+        {
+          "id": "S02",
+          "topic": "自由活动的安全提醒与集合约定",
+          "user_answer": "B",
+          "expected_answer": [
+            "B"
+          ],
+          "result": "passed"
+        },
+        {
+          "id": "S03",
+          "topic": "大理古城商业化抱怨的应对",
+          "user_answer": "经多次提示后表示理解、提议附近小巷看民居生活细节",
+          "expected_answer": null,
+          "result": "coached_pass"
+        },
+        {
+          "id": "S04",
+          "topic": "游客突发疾病首要处理",
+          "user_answer": "B",
+          "expected_answer": [
+            "B"
+          ],
+          "result": "passed"
+        },
+        {
+          "id": "S05",
+          "topic": "涉及费用的行程变更口头答应后补手续",
+          "user_answer": "错",
+          "expected_answer": null,
+          "result": "limited_pass_imprecise_stem"
+        },
+        {
+          "id": "S06",
+          "topic": "自行离团简化情境",
+          "user_answer": "B",
+          "expected_answer": [
+            "B"
+          ],
+          "result": "limited_pass"
+        },
+        {
+          "id": "S07",
+          "topic": "为避免投诉可否隐瞒服务失误",
+          "user_answer": "错",
+          "expected_answer": "false",
+          "result": "passed"
+        },
+        {
+          "id": "S08",
+          "topic": "购物退货争执初步协调",
+          "user_answer": "C",
+          "expected_answer": [
+            "C"
+          ],
+          "result": "passed"
+        },
+        {
+          "id": "S09",
+          "topic": "导游基本义务多选",
+          "user_answer": "ACD",
+          "expected_answer": [
+            "A",
+            "C",
+            "D"
+          ],
+          "result": "passed"
+        },
+        {
+          "id": "S10",
+          "topic": "世界遗产类型多选",
+          "user_answer": "ABD",
+          "expected_answer": null,
+          "result": "ambiguous_no_whole_question_score"
+        },
+        {
+          "id": "S11",
+          "topic": "屋顶常规等级与形式多选",
+          "user_answer": "AB",
+          "expected_answer": [
+            "A",
+            "B"
+          ],
+          "result": "passed"
+        },
+        {
+          "id": "S12",
+          "topic": "名茶分类多选",
+          "user_answer": "CDE",
+          "expected_answer": [
+            "A",
+            "C",
+            "E"
+          ],
+          "result": "omission_and_wrong_selection",
+          "options": {
+            "A": "君山银针—黄茶",
+            "B": "白毫银针—绿茶",
+            "C": "六安瓜片—绿茶",
+            "D": "大红袍—红茶",
+            "E": "安溪铁观音—乌龙茶"
+          },
+          "omitted": [
+            "A"
+          ],
+          "wrong_selected": [
+            "D"
+          ]
+        },
+        {
+          "id": "S13",
+          "topic": "明清科举制度多选",
+          "user_answer": "ACE",
+          "expected_answer": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ],
+          "result": "omission_B_D_ambiguous",
+          "options": {
+            "A": "乡试第一名称解元",
+            "B": "会试第一名称会元",
+            "C": "殿试第一名称状元",
+            "D": "殿试三甲赐进士及第",
+            "E": "殿试由皇帝主持"
+          },
+          "omitted": [
+            "B"
+          ],
+          "note": "D应写第三甲，不将正确排除该含糊项作为完整三甲知识掌握证据"
+        },
+        {
+          "id": "S14",
+          "topic": "名绣产地多选",
+          "user_answer": "ACD",
+          "expected_answer": [
+            "A",
+            "C",
+            "D"
+          ],
+          "result": "passed",
+          "options": {
+            "A": "苏绣—苏州",
+            "B": "湘绣—湘西",
+            "C": "粤绣—广州、潮州",
+            "D": "蜀绣—成都"
+          }
+        },
+        {
+          "id": "S15",
+          "topic": "古籍作者多选",
+          "user_answer": "BCDE",
+          "expected_answer": [
+            "A",
+            "B",
+            "C"
+          ],
+          "result": "omission_and_wrong_selection",
+          "options": {
+            "A": "《营造法式》—李诫",
+            "B": "《梦溪笔谈》—沈括",
+            "C": "《水经注》—郦道元",
+            "D": "《天工开物》—徐光启",
+            "E": "《农政全书》—宋应星"
+          },
+          "omitted": [
+            "A"
+          ],
+          "wrong_selected": [
+            "D",
+            "E"
+          ]
+        },
+        {
+          "id": "S16",
+          "topic": "君山银针、大红袍分别属于什么茶类",
+          "user_answer": null,
+          "expected_answer": {
+            "君山银针": "黄茶",
+            "大红袍": "乌龙茶／青茶"
+          },
+          "result": "unanswered_session_ended"
+        }
+      ],
+      "record_markdown": "2026-11-15_答题记录.md"
+    }
+  ],
+  "study_guides": [
+    "01-政策与法律法规重点.md",
+    "02-导游业务重点.md",
+    "03-全国导游基础知识分类记忆表.md",
+    "04-地方导游基础知识分类记忆表.md"
+  ]
+}
