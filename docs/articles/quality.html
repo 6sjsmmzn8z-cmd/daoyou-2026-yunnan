@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="2026全国导游资格考试资料库：云南昆明中文类，官方大纲、复习重点、历年回忆题、100道原创进阶练习、四科分类记忆和12景点面试提纲。"><title>题库质量修订说明 · 2026导考资料库</title><link rel="stylesheet" href="../style.css"></head><body><a class="skip" href="#main">跳到正文</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">导</span><span>2026 导考资料库<small>云南昆明 · 中文类</small></span></a><nav aria-label="主导航"><a href="../index.html">阅读首页</a><a href="../study/index.html">四科记忆</a><a href="../quiz.html">进阶训练</a><a href="../study/agent.html">学习记录</a><a href="../articles/yunnan.html">云南面试</a><a href="../index.html#library">全部资料</a></nav></div></header><main id="main"><article class="article"><p class="crumb"><a href="../index.html">阅读首页</a> / 题库质量修订说明</p><h1 id="训练题质量修订清理低区分度题保留个人学习证据">训练题质量修订：清理低区分度题，保留个人学习证据</h1>
+<p>修订日期：2026-11-16。</p>
+<h2 id="第一版的问题">第一版的问题</h2>
+<p>用户反馈原题干扰项过于明显，靠常识或排除荒唐选项就能答对，无法发现知识缺口。逐题检查发现：</p>
+<ul>
+<li>20道多选全部只有一个错误项，形成“全选减一”的固定套路。</li>
+<li>40道单选解析套用“注意法律条件、分类或时点”，20道多选解析套用“其余选项不符合”，没有解释关键差别。</li>
+<li>导游业务10道单选中，9道的正确项严格最长，容易暴露答案。</li>
+<li>《茶经》作者、石林地貌、《营造法式》年代、三峡名称等有换题型重复。</li>
+<li>原题将私人病历、家庭住址混入维权证据，将“强迫交易”混入园林手法，将跨领域选项混入化石价值，未有效考查专业辨析。</li>
+</ul>
+<p>这些是内容与结构问题的检查结果，不是基于真实考生样本计算的区分度系数。</p>
+<h2 id="本版处理">本版处理</h2>
+<ol type="1">
+<li>主训练库替换为100道原创进阶练习，四科各25题，每科15单选、10多选。题号101—200，与历史题分开。</li>
+<li>干扰项使用同层级的相近概念、地点、程序与条件；避免明显荒唐、跨领域、失德选项。不能只把句子写长就称为提难。</li>
+<li>多选正确数量变化，检查单选正确位置与选项长度，不提供机械猜题套路。</li>
+<li>解析说明正确依据及关键错误项为什么不成立；大纲用来确定范围，不单独证明事实细节。</li>
+<li>JSON是题库唯一数据源，脚本同步生成CSV、题目与解析Markdown/HTML、在线题库和下载复习册。</li>
+<li>知识点标签可能含答案，只在作答后的解析显示。</li>
+<li>网页新增四科分类表、学习记录入口，以及页尾“上一篇／下一篇”，支持连续阅读。</li>
+</ol>
+<p>“进阶”是本资料的编排定位，未经过真实样本校准，不代表官方难度、真题或命中保证。题型比例不等同正式试卷，不据此推定正式考试多选漏选计分。</p>
+<h2 id="个人学习记录保持独立">个人学习记录保持独立</h2>
+<p>先读<a href="../study/agent.html">Agent必读</a>与<a href="../study/progress.html">进度JSON</a>。旧题下线不清空作答证据，不把已经答对的具体点重新问一遍。仅看过新表或解析不能标为复测通过；未练的新点仍是“未验证”。网站隐藏已答对题是当前页面会话功能，不伪称已经自动验证长期掌握。</p>
+<p>第三方回忆题与原始资料仍作为标明来源的档案保留，不把它们冒称本套题的官方背书。</p>
+<h2 id="维护命令">维护命令</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_practice.py <span class="at">--book</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_site.py</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/check.py</span></code></pre></div>
+<p><code>--book</code> 使用Pandoc与PyMuPDF同步重建 <code>study.docx</code>、<code>study.pdf</code>。不带参数只更新题目导出。不要手改导出的HTML或网页内嵌题库，以免下次生成覆盖或出现版本不一致。</p>
+</article><nav class="reading-nav" aria-label="连续阅读"><a rel="prev" href="../quiz.html"><small>上一篇</small><strong>进阶训练 ←</strong></a><a rel="next" href="../study/index.html"><small>下一篇</small><strong>四科分类记忆 →</strong></a></nav></main><footer><p>资料收集截点：2026年11月14日 · 分类记忆、进阶题与阅读导航更新：2026年11月16日</p><p>预测为复习优先级，不保证命中。回忆题与旧版资料请对照2026官方大纲。<a href="../about.html">来源与使用说明</a></p></footer></body></html>

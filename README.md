@@ -18,7 +18,7 @@
 |顺序|内容|在线入口|
 |---|---|---|
 |第一步|确认2026考试规则、重点与最后一周计划|[考试与复习重点](https://6sjsmmzn8z-cmd.github.io/daoyou-2026-yunnan/articles/priorities.html)|
-|第二步|按四科作答，查缺补漏|[100道在线训练](https://6sjsmmzn8z-cmd.github.io/daoyou-2026-yunnan/quiz.html)|
+|第二步|按四科辨析条件与易混点|[100道原创进阶训练](https://6sjsmmzn8z-cmd.github.io/daoyou-2026-yunnan/quiz.html)|
 |第三步|准备12景点、对应团型及24道问答|[云南中文面试](https://6sjsmmzn8z-cmd.github.io/daoyou-2026-yunnan/articles/yunnan.html)|
 |第四步|按名称、分类和阅读形式补充查阅|[全部资料目录](https://6sjsmmzn8z-cmd.github.io/daoyou-2026-yunnan/#library)|
 |需要补课时|选择课程、教材和题库|[课程与教材指南](https://6sjsmmzn8z-cmd.github.io/daoyou-2026-yunnan/articles/courses.html)|
@@ -27,7 +27,8 @@
 
 - 251条可追溯来源，提供原始网址、年份提示和资料分类。
 - **141份可直接阅读的PDF**：原始文件、从公开资料包中展开的内容、Office转换件以及复习册。包含重复来源去重，口径与最初104份原始PDF不同。
-- 100道原创练习，支持按科目筛选、判断/单选/多选作答和答案解析。统计仅针对当前页面会话，不上传答题记录。
+- 100道原创进阶练习：60单选、40多选，替换低区分度旧题；合理近似干扰项配逐题解析，支持科目／题型筛选和隐藏本页已答对题。统计仅针对当前页面会话，不上传答题记录。
+- [四科分类记忆网页](https://6sjsmmzn8z-cmd.github.io/daoyou-2026-yunnan/study/index.html)与[Agent先读网页](https://6sjsmmzn8z-cmd.github.io/daoyou-2026-yunnan/study/agent.html)，同步个人答题证据和待巩固点；[题库修订说明](reports/06_训练题质量修订说明.md)。
 - 云南12景点的团型适配、讲解提纲和24道中文面试预测问答。
 - 官方大纲、合同、法规、历年回忆题、模拟题、时政、思维导图与课程入口。
 
@@ -52,6 +53,7 @@ docs/                   直接发布到GitHub Pages的静态网站
   sources/              来源介绍与纯文字存档
 materials/              从公开资料包展开、转换的PDF
 reports/                原创文稿与题目数据
+study/                  四科分类记忆、个人答题记录和结构化进度
 official/               官方原文件
 papers/                 回忆题、模拟题和复习PDF
 pages/                  原网页档案（不作为网站发布目录）
@@ -64,11 +66,14 @@ scripts/                网站生成与检查工具
 使用Python 3和Pandoc重新生成页面，再提交到 `main`；GitHub Pages从 `main` 的 `/docs` 目录发布。
 
 ```bash
+python3 scripts/build_practice.py --book
 python3 scripts/build_site.py
 python3 scripts/check.py
 ```
 
 用户学习页面不需要Python、账号或下载压缩包。后续考务以官方最新通知与准考证为准。
+
+题库JSON为唯一数据源。修改题目或四科表后先同步下载复习册（`--book` 另需PyMuPDF），再构建网页；只改网页外观时可以直接运行网站构建。
 
 ## 来源与使用说明
 
